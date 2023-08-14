@@ -1,1 +1,1 @@
-<img src="/images/Desafio_Aula1.jpg" alt="Desafio">
+![Imagem enunciado](images/Desafio_Aula1.jpg)
