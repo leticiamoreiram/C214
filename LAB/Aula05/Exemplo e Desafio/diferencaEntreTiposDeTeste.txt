@@ -1,0 +1,5 @@
+Os testes funcionais se concentram em verificar se o sistema atende às especificações funcionais e requisitos do usuário. Eles testam se as funções e recursos do software funcionam conforme o esperado, geralmente usando casos de teste que simulam cenários típicos de uso. 
+
+Os testes não funcionais se concentram em aspectos que não estão diretamente relacionados às funcionalidades específicas do software, mas sim em seus atributos de qualidade, como desempenho, segurança, usabilidade e escalabilidade. Eles avaliam como o sistema lida com condições adversas, como alta carga de usuários, vulnerabilidades de segurança, tempos de resposta aceitáveis e experiência do usuário. Visam garantir que o software seja robusto, seguro e capaz de atender às necessidades do usuário em termos de eficiência e qualidade, além de funcionar conforme o esperado. 
+
+Em resumo, enquanto os testes funcionais validam o "o que" o software faz, os testes não funcionais se concentram no "como" ele faz e como ele se comporta sob diferentes condições.
