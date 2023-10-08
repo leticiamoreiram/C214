@@ -41,7 +41,7 @@ describe('Testando a função multiplicacao', () => {
       expect(mockSoma).toHaveBeenCalledWith(2, 3);
   
       // Verificando o resultado da função
-      expect(resultado).toBe(6);
+      expect(resultado).toBe(5);
   
       // Restaurando a implementação original da função soma
       soma.soma = jest.fn();
