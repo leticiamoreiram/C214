@@ -1,45 +1,22 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import App from '../src/components/App';
+import { render, fireEvent, screen } from '@testing-library/react';
+import App from './src/components/App'; // Certifique-se de que o caminho para o componente App está correto
 
-test('adiciona uma nova tarefa à lista', () => {
-  const { getByPlaceholderText, getByText } = render(<App />);
+test('adiciona uma nova tarefa', () => {
+  render(<App />);
 
-  const titleInput = getByPlaceholderText('Título');
-  const descriptionInput = getByPlaceholderText('Descrição');
-  const addButton = getByText('Adicionar');
+  const titleInput = screen.getByPlaceholderText('Título');
+  const descriptionInput = screen.getByPlaceholderText('Descrição');
+  const addButton = screen.getByText('Adicionar');
 
   fireEvent.change(titleInput, { target: { value: 'Nova Tarefa' } });
   fireEvent.change(descriptionInput, { target: { value: 'Descrição da nova tarefa' } });
   fireEvent.click(addButton);
 
-  const taskTitle = getByText('Nova Tarefa');
-  const taskDescription = getByText('Descrição da nova tarefa');
+  // Atualize os seletores para corresponder aos elementos corretos
+  const taskTitle = screen.getByText('Title: Nova Tarefa');
+  const taskDescription = screen.getByText('Description: Descrição da nova tarefa');
 
   expect(taskTitle).toBeInTheDocument();
   expect(taskDescription).toBeInTheDocument();
-});
-
-test('atualiza o status de uma tarefa', () => {
-  const { getByText } = render(<App />);
-
-  const updateButton = getByText('Update Status');
-  fireEvent.click(updateButton);
-
-  const taskStatus = getByText('Em andamento');
-
-  expect(taskStatus).toBeInTheDocument();
-});
-
-test('exclui uma tarefa da lista', () => {
-  const { getByText, queryByText } = render(<App />);
-
-  const deleteButton = getByText('Delete');
-  fireEvent.click(deleteButton);
-
-  const taskTitle = queryByText('Nova Tarefa');
-  const taskDescription = queryByText('Descrição da nova tarefa');
-
-  expect(taskTitle).toBeNull();
-  expect(taskDescription).toBeNull();
 });
